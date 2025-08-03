@@ -10,20 +10,92 @@
   <body>
     <div class="container">
       <h2 class="title">⚡ FocusHub</h2>
-
+      
       <div id="currentDate" class="date"></div>
       <div id="clock" class="clock"></div>
-
-      <div class="card goal-section">
-        <h3>🎯 Today's Goal</h3>
-        <input
-          type="text"
-          id="goalInput"
-          placeholder="What's your goal today?"
-        />
-        <button id="saveGoalBtn">Save</button>
-        <p id="savedGoalText">None</p>
+      
+      <div class="link-grid">
+        <!-- 🔍 Search & Productivity -->
+        <h4>🔍 Search & Productivity</h4>
+        <a href="https://google.com" target="_blank">Google</a>
+        <a href="https://chatgpt.com/?model=auto" target="_blank">ChatGPT</a>
+        <a href="https://gemini.google.com/app" target="_blank">Gemini</a>
+        <a href="https://open.spotify.com/search/" target="_blank">Spotify</a>
+        <a href="https://mail.google.com" target="_blank">Gmail</a>  
+  
+        <!-- 💻 Coding & Development -->
+        <h4>💻 Coding & Development</h4>
+        <a
+          href="https://leetcode.com/problemset/all-code-essentials/"
+          target="_blank"
+          >LeetCode</a
+        >
+        <a href="https://github.com/abhisrivasta" target="_blank">GitHub</a>
+        <a href="https://roadmap.sh" target="_blank">Roadmap.sh</a>
+  
+        <!-- 🧠 Vocabulary & English Practice -->
+        <h4>🧠 Vocabulary & English Practice</h4>
+        <a href="https://membean.com/" target="_blank">Membean</a>
+        <a href="https://quizlet.com/" target="_blank">Quizlet</a>
+        <a href="https://www.vocabulary.com/" target="_blank">Vocabulary.com</a>
+        <a href="https://wordpandit.com/" target="_blank">Wordpandit</a>
+        <a href="https://gre.magoosh.com/builder/vocabulary" target="_blank"
+          >Magoosh Vocabulary</a
+        >
+  
+        <!-- 🔢 Aptitude & Reasoning -->
+        <h4>🔢 Aptitude & Reasoning</h4>
+        <a href="https://www.indiabix.com/" target="_blank">IndiaBix</a>
+        <a href=" https://www.prepinsta.com/" target="_blank">PrepInsta</a>
+        <a
+          href="https://www.geeksforgeeks.org/aptitude/aptitude-questions-and-answers/"
+          target="_blank"
+          >GeeksforGeeks Aptitude</a
+        >
+  
+        <!-- 📘 Reading & Comprehension -->
+        <h4>📘 Reading & Comprehension</h4>
+        <a
+          href="https://www.indiabix.com/verbal-ability/comprehension/"
+          target="_blank"
+          >IndiaBix RC</a
+        >
+        <a href="https://www.thehindu.com/opinion/editorial/" target="_blank"
+          >The Hindu Editorial</a
+        >
+        <a href="https://www.scientificamerican.com/" target="_blank"
+          >Scientific American</a
+        >
+  
+        <!-- 📚 Grammar Practice -->
+        <h4>📚 Grammar Practice</h4>
+        <a href="https://www.grammarly.com/blog/" target="_blank"
+          >Grammarly Blog</a
+        >
+        <a href="https://www.perfect-english-grammar.com/" target="_blank"
+          >Perfect English Grammar</a
+        >
+        <a href="https://www.englishclub.com/grammar/" target="_blank"
+          >EnglishClub Grammar</a
+        >
+  
+        <!-- 🌐 Professional & Career -->
+        <h4>🌐 Professional & Career</h4>
+        <a
+          href="https://www.linkedin.com/in/abhishek-kumar-0ba257352/"
+          target="_blank"
+          >LinkedIn</a
+        >
       </div>
+
+     <div class="card goal-section">
+  <h3>🎯 Today's Goals</h3>
+  <input type="text" id="goalInput" placeholder="Enter a goal..." />
+  <button id="addGoalBtn">➕ Add Goal</button>
+  <ul id="goalList" class="goal-list"></ul>
+</div>
+
+
 
       <div class="card quote-box">
         <div class="quote-icon">💡</div>
@@ -42,31 +114,7 @@
         <button id="saveNotesBtn">💾 Save Notes</button>
       </div>
 
-      <div class="card task-box">
-        <h3>✅ Quick Tasks</h3>
-        <label><input type="checkbox" class="task-check" /> Review code</label>
-        <label><input type="checkbox" class="task-check" /> Read article</label>
-        <label
-          ><input type="checkbox" class="task-check" /> Stretch 5 mins</label
-        >
-      </div>
 
-      <div class="link-grid">
-        <a href="https://google.com" target="_blank">🔍 Google</a>
-        <a href="https://youtube.com" target="_blank">🎥 YouTube</a>
-        <a href="https://leetcode.com/problemset/all-code-essentials/">🧑‍💻 Leetcode</a>
-        <a href="https://chatgpt.com/?model=auto">💬 Chatgpt</a>
-        <a href="https://open.spotify.com/search/">🎧 Spotify</a>
-        <a href="https://gemini.google.com/app">🔍 Gemini</a>
-        <a href="https://github.com/abhisrivasta" target="_blank">💻 GitHub</a>
-        <a href="https://mail.google.com" target="_blank">📧 Gmail</a>
-        <a
-          href="https://www.linkedin.com/in/abhishek-kumar-0ba257352/"
-          target="_blank"
-          >🌐 LinkedIn</a
-        >
-        <a href="https://roadmap.sh" target="_blank">📖 Roadmap.sh</a>
-      </div>
 
       <div class="card controls">
         <button id="themeBtn">🌓 Toggle Theme</button>

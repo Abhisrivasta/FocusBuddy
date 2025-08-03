@@ -6,13 +6,80 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// Save Goal
 const goalInput = document.getElementById("goalInput");
-const savedGoalText = document.getElementById("savedGoalText");
-document.getElementById("saveGoalBtn").onclick = () => {
+const addGoalBtn = document.getElementById("addGoalBtn");
+const goalList = document.getElementById("goalList");
+
+let goals = JSON.parse(localStorage.getItem("goals")) || [];
+
+function saveGoals() {
+  localStorage.setItem("goals", JSON.stringify(goals));
+}
+
+function renderGoals() {
+  goalList.innerHTML = "";
+
+  if (goals.length === 0) {
+    goalList.innerHTML = "<li style='opacity: 0.5;'>No goals yet.</li>";
+    return;
+  }
+
+  goals.forEach((goal, index) => {
+    const li = document.createElement("li");
+    li.className = "goal-item";
+
+    const span = document.createElement("span");
+    span.textContent = goal;
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "✏️";
+    editBtn.className = "edit-btn";
+    editBtn.onclick = () => {
+      const newGoal = prompt("Edit your goal:", goal);
+      if (newGoal !== null && newGoal.trim() !== "") {
+        goals[index] = newGoal.trim();
+        saveGoals();
+        renderGoals();
+      }
+    };
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "🗑️";
+    deleteBtn.className = "delete-btn";
+    deleteBtn.onclick = () => {
+      if (confirm("Delete this goal?")) {
+        goals.splice(index, 1);
+        saveGoals();
+        renderGoals();
+      }
+    };
+
+    li.appendChild(span);
+    li.appendChild(editBtn);
+    li.appendChild(deleteBtn);
+    goalList.appendChild(li);
+  });
+}
+
+addGoalBtn.onclick = () => {
   const goal = goalInput.value.trim();
-  localStorage.setItem("dailyGoal", goal);
-  savedGoalText.textContent = goal || "None";
+  if (goal) {
+    goals.push(goal);
+    saveGoals();
+    renderGoals();
+    goalInput.value = "";
+  } else {
+    alert("⚠️ Please enter a valid goal.");
+  }
+};
+
+window.onload = () => {
+  renderGoals();
+
+  const savedNote = localStorage.getItem("quickNotes");
+  if (savedNote) {
+    document.getElementById("notesInput").value = savedNote;
+  }
 };
 
 
