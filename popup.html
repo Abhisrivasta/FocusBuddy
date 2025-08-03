@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FocusHub</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="quotes.js"></script>
+    <script defer src="popup.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title">⚡ FocusHub</h2>
+
+      <div id="currentDate" class="date"></div>
+      <div id="clock" class="clock"></div>
+
+      <div class="card goal-section">
+        <h3>🎯 Today's Goal</h3>
+        <input
+          type="text"
+          id="goalInput"
+          placeholder="What's your goal today?"
+        />
+        <button id="saveGoalBtn">Save</button>
+        <p id="savedGoalText">None</p>
+      </div>
+
+      <div class="card quote-box">
+        <div class="quote-icon">💡</div>
+        <h3>Motivational Quote</h3>
+        <p id="quoteText">Loading quote...</p>
+        <button id="refreshQuoteBtn">🔄 New Quote</button>
+      </div>
+
+      <div class="card notes-box">
+        <h3>📝 Quick Notes</h3>
+        <textarea
+          id="notesInput"
+          rows="4"
+          placeholder="Write your notes..."
+        ></textarea>
+        <button id="saveNotesBtn">💾 Save Notes</button>
+      </div>
+
+      <div class="card task-box">
+        <h3>✅ Quick Tasks</h3>
+        <label><input type="checkbox" class="task-check" /> Review code</label>
+        <label><input type="checkbox" class="task-check" /> Read article</label>
+        <label
+          ><input type="checkbox" class="task-check" /> Stretch 5 mins</label
+        >
+      </div>
+
+      <div class="link-grid">
+        <a href="https://google.com" target="_blank">🔍 Google</a>
+        <a href="https://youtube.com" target="_blank">🎥 YouTube</a>
+        <a href="https://leetcode.com/problemset/all-code-essentials/">🧑‍💻 Leetcode</a>
+        <a href="https://chatgpt.com/?model=auto">💬 Chatgpt</a>
+        <a href="https://open.spotify.com/search/">🎧 Spotify</a>
+        <a href="https://gemini.google.com/app">🔍 Gemini</a>
+        <a href="https://github.com/abhisrivasta" target="_blank">💻 GitHub</a>
+        <a href="https://mail.google.com" target="_blank">📧 Gmail</a>
+        <a
+          href="https://www.linkedin.com/in/abhishek-kumar-0ba257352/"
+          target="_blank"
+          >🌐 LinkedIn</a
+        >
+        <a href="https://roadmap.sh" target="_blank">📖 Roadmap.sh</a>
+      </div>
+
+      <div class="card controls">
+        <button id="themeBtn">🌓 Toggle Theme</button>
+        <button id="affirmationBtn">💬 Show Affirmation</button>
+      </div>
+
+      <div id="affirmationBox" class="affirmation-box" style="display: none">
+        🌟 You are capable of amazing things!
+      </div>
+    </div>
+  </body>
+</html>
